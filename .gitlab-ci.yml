@@ -23,18 +23,18 @@ deploy:
   only:
     - main
   script:
-    - echo "Generating serverless config..."
     - |
+      export DEPLOY_PREFIX="Users/${USER_ID}/Projects/${PROJECT_ID}"
       cat <<EOF > serverless.yml
       myApp:
         component: "@sls-next/serverless-component@3.7.0"
         inputs:
           name: ${PROJECT_ID}
           bucketName: ${DEPLOY_BUCKET}
+          bucketPrefix: ${DEPLOY_PREFIX}
           domain:
             - ${PROJECT_ID}
-            - ${DEPLOY_DOMAIN_ROOT}
-EOF
-
-    - echo "Deploying ${PROJECT_ID} to https://${PROJECT_ID}.${DEPLOY_DOMAIN_ROOT}"
+            - web.kodu.dev
+  EOF
     - npx serverless
+
