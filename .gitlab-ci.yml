@@ -1,0 +1,40 @@
+image: node:18
+
+stages:
+  - deploy
+
+variables:
+  AWS_REGION: "us-east-1"
+  PROJECT_ID: "$CI_PROJECT_NAME"
+  DEPLOY_DOMAIN_ROOT: "web.azad.dev"
+  DEPLOY_BUCKET: "azad-web-projects"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install -g serverless
+  - npm install
+
+deploy:
+  stage: deploy
+  only:
+    - main
+  script:
+    - echo "Generating serverless config..."
+    - |
+      cat <<EOF > serverless.yml
+      myApp:
+        component: "@sls-next/serverless-component@3.7.0"
+        inputs:
+          name: ${PROJECT_ID}
+          bucketName: ${DEPLOY_BUCKET}
+          domain:
+            - ${PROJECT_ID}
+            - ${DEPLOY_DOMAIN_ROOT}
+EOF
+
+    - echo "Deploying ${PROJECT_ID} to https://${PROJECT_ID}.${DEPLOY_DOMAIN_ROOT}"
+    - npx serverless
