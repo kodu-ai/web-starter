@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface Integration {
   id: string;
@@ -16,16 +17,16 @@ interface Hero32Props {
 }
 
 const Hero32 = ({
-  heading = "Blocks Built With Shadcn & Tailwind",
-  description = "Fully decomposable components, all the images and background patterns are individual images or svgs that can be replaced.",
+  heading = 'Blocks Built With Shadcn & Tailwind',
+  description = 'Fully decomposable components, all the images and background patterns are individual images or svgs that can be replaced.',
   button = {
-    text: "Discover all components",
-    url: "https://www.shadcnblocks.com",
+    text: 'Discover all components',
+    url: 'https://www.shadcnblocks.com',
   },
   integrations = [
     [
       {
-        id: "integration-1",
+        id: 'integration-1',
         icon: (
           <img
             alt="Integration"
@@ -34,7 +35,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-2",
+        id: 'integration-2',
         icon: (
           <img
             alt="Integration"
@@ -43,7 +44,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-3",
+        id: 'integration-3',
         icon: (
           <img
             alt="Integration"
@@ -52,7 +53,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-4",
+        id: 'integration-4',
         icon: (
           <img
             alt="Integration"
@@ -61,7 +62,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-5",
+        id: 'integration-5',
         icon: (
           <img
             alt="Integration"
@@ -72,7 +73,7 @@ const Hero32 = ({
     ],
     [
       {
-        id: "integration-6",
+        id: 'integration-6',
         icon: (
           <img
             alt="Integration"
@@ -81,7 +82,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-7",
+        id: 'integration-7',
         icon: (
           <img
             alt="Integration"
@@ -90,7 +91,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-8",
+        id: 'integration-8',
         icon: (
           <img
             alt="Integration"
@@ -99,7 +100,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-9",
+        id: 'integration-9',
         icon: (
           <img
             alt="Integration"
@@ -108,7 +109,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-10",
+        id: 'integration-10',
         icon: (
           <img
             alt="Integration"
@@ -119,7 +120,7 @@ const Hero32 = ({
     ],
     [
       {
-        id: "integration-11",
+        id: 'integration-11',
         icon: (
           <img
             alt="Integration"
@@ -128,7 +129,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-12",
+        id: 'integration-12',
         icon: (
           <img
             alt="Integration"
@@ -137,7 +138,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-13",
+        id: 'integration-13',
         icon: (
           <img
             alt="Integration"
@@ -146,7 +147,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-14",
+        id: 'integration-14',
         icon: (
           <img
             alt="Integration"
@@ -155,7 +156,7 @@ const Hero32 = ({
         ),
       },
       {
-        id: "integration-15",
+        id: 'integration-15',
         icon: (
           <img
             alt="Integration"
@@ -185,7 +186,7 @@ const Hero32 = ({
                 </h1>
                 <p className="text-muted-foreground">{description}</p>
                 <Button asChild size="lg" className="mt-10">
-                  <a href={button.url}>{button.text}</a>
+                  <Link href={button.url}>{button.text}</Link>
                 </Button>
               </div>
             </div>

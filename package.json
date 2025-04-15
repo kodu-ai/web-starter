@@ -2,12 +2,11 @@
   "name": "web-starter",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -44,35 +43,37 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.7.2",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.487.0",
+    "next": "15.3.0",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
+    "react-confetti": "^6.4.0",
     "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
     "react-resizable-panels": "^2.1.7",
-    "react-router-dom": "6.29.0",
     "recharts": "^2.15.2",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
     "tailwindcss": "^4.1.3",
     "tw-animate-css": "^1.2.5",
-    "vaul": "^1.1.2",
-    "zod": "^3.24.2"
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@eslint/js": "^9.21.0",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
     "eslint": "^9.21.0",
+    "eslint-config-next": "15.3.0",
     "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "tailwindcss": "^4",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "typescript-eslint": "^8.24.1"
   }
 }

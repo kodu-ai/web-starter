@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface MenuItem {
   title: string;
   links: {
@@ -83,14 +85,14 @@ const Footer2 = ({
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
             <div className="col-span-2 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
-                <a href="https://shadcnblocks.com">
+                <Link href="/">
                   <img
                     src={logo.src}
                     alt={logo.alt}
                     title={logo.title}
                     className="h-10"
                   />
-                </a>
+                </Link>
                 <p className="text-xl font-semibold">{logo.title}</p>
               </div>
               <p className="mt-4 font-bold">{tagline}</p>
@@ -104,7 +106,7 @@ const Footer2 = ({
                       key={linkIdx}
                       className="font-medium hover:text-primary"
                     >
-                      <a href={link.url}>{link.text}</a>
+                      <Link href={link.url}>{link.text}</Link>
                     </li>
                   ))}
                 </ul>
@@ -116,7 +118,7 @@ const Footer2 = ({
             <ul className="flex gap-4">
               {bottomLinks.map((link, linkIdx) => (
                 <li key={linkIdx} className="underline hover:text-primary">
-                  <a href={link.url}>{link.text}</a>
+                  <Link href={link.url}>{link.text}</Link>
                 </li>
               ))}
             </ul>
